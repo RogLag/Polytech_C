@@ -1,9 +1,12 @@
+// importation des bibliothèques standards
 #include <stdio.h>
 
+// déclaration des fonctions
 int sum(int a, int b);
 int product(int a, int b);
 float division(int a, int b);
 
+// fonction principale
 void main() {
     printf("Hello, World!\n");
     int a, b, c, d;
@@ -18,14 +21,13 @@ void main() {
     printf("%d / %d = %f\n", a, b, e);
 }
 
+// définition des fonctions
 int sum(int a, int b) {
     return a + b;
 }
-
 int product(int a, int b) {
     return a * b;
 }
-
 float division(int a, int b) {
     return (float) a / b;
 }

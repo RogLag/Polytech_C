@@ -1,5 +1,6 @@
 // importation des bibliothèques standards
 #include <stdio.h>
+#include <stdlib.h>
 
 // déclaration des fonctions
 int sum(int a, int b);
@@ -29,5 +30,9 @@ int product(int a, int b) {
     return a * b;
 }
 float division(int a, int b) {
+    if (b == 0) {
+        fprintf(stderr, "fatal error: division by zero\n");
+        exit(1);
+    }
     return (float) a / b;
 }

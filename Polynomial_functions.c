@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void p_sum (
+void p_sum(
     float * R , const float * P1 , const float * P2 , unsigned int degree
 );
 
-float p_eval ( const float * P , unsigned int degree , float x );
+float p_eval( 
+    const float * P , unsigned int degree , float x 
+);
+
+int power( 
+    int x , int y 
+);
 
 int main () {
     // P1: x^2 + 2x + 3
@@ -24,7 +30,7 @@ int main () {
 
 // Un erreur de compilation apparait à la line 15 à cause de la fonction p_sum qui n'existe pas encore
 
-void p_sum (
+void p_sum(
     float * R , const float * P1 , const float * P2 , unsigned int degree
 ) {
     for ( int i = 0; i <= degree; ++ i ) {
@@ -32,10 +38,22 @@ void p_sum (
     }
 }
 
-float p_eval ( const float * P , unsigned int degree , float x ) {
+int power( 
+    int x , int y 
+) {
+    int result = 1;
+    for ( int i = 0; i < y; ++ i ) {
+        result *= x;
+    }
+    return result;
+}
+
+float p_eval ( 
+    const float * P , unsigned int degree , float x 
+) {
     float result = 0.;
-    for ( int i = 0; i <= degree; ++ i ) {
-        result += P [ i ] * pow( x , i );
+    for ( int i = 0; i <= (signed int)degree; ++ i ) {
+        result += P [ i ] * power( (int)x , i );
     }
     return result;
 }

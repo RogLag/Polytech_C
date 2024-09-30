@@ -9,7 +9,6 @@ void main() {
     int a, b, c, d;
     float e;
     printf("Enter two numbers: ");
-    fflush( stdout );
     scanf("%d %d", &a, &b);
     c = sum(a, b);
     printf("%d + %d = %d\n", a, b, c);

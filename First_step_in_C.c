@@ -4,7 +4,7 @@ int sum(int a, int b);
 int product(int a, int b);
 float division(int a, int b);
 
-int main() {
+void main() {
     printf("Hello, World!\n");
     int a, b, c, d;
     float e;
@@ -17,7 +17,6 @@ int main() {
     printf("%d x %d = %d\n", a, b, d);
     e = division(a, b);
     printf("%d / %d = %f\n", a, b, e);
-    return 0;
 }
 
 int sum(int a, int b) {

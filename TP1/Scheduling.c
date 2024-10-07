@@ -36,8 +36,17 @@ int main () {
         }
     }
 
-    for ( int k = 0; k < 5; ++ k ) {
-        printf (" Task %d: start =%4d, end =%4d, lateness =%4d\n", tasks [ k ], p [ k ], d [ k ], p [ k ] - d [ k ] );
+    int horloge = 0;
+    int lateness = 0;
+    int horloge_mem = 0;
+    for (int k=0 ; k<5 ; k++) {
+        horloge_mem = horloge;
+        if (d[k] > horloge) {
+            horloge = d[k];
+        }
+        lateness = horloge - d[k];
+        horloge += p[k];
+        printf("Tache %d: debut=%d, fin=%d, lateness=%d\n", tasks[k], horloge_mem, horloge, lateness);
     }
 
     return 0;

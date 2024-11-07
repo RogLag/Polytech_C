@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['list_0',['List',['../struct_list.html',1,'']]],
+  ['list_2dtest_2eh_1',['list-test.h',['../list-test_8h.html',1,'']]],
+  ['list_2ec_2',['list.c',['../list_8c.html',1,'']]],
+  ['list_2eh_3',['list.h',['../list_8h.html',1,'']]],
+  ['list_5fclear_4',['List_clear',['../list_8h.html#af5600aaf3ae8a1173bb37331726ef79a',1,'List_clear(struct List *list):&#160;list.c'],['../list_8c.html#af5600aaf3ae8a1173bb37331726ef79a',1,'List_clear(struct List *list):&#160;list.c']]],
+  ['list_5fdelete_5',['List_delete',['../list_8h.html#aa019fde4b64ecf1d964ac2c7bd913764',1,'List_delete(struct List *list):&#160;list.c'],['../list_8c.html#aa019fde4b64ecf1d964ac2c7bd913764',1,'List_delete(struct List *list):&#160;list.c']]],
+  ['list_5ferase_6',['List_erase',['../list_8h.html#ad9651dd579d4b99914f39a08eeb4dc30',1,'List_erase(struct List *list, struct Node *pos):&#160;list.c'],['../list_8c.html#ad9651dd579d4b99914f39a08eeb4dc30',1,'List_erase(struct List *list, struct Node *pos):&#160;list.c']]],
+  ['list_5ffind_7',['List_find',['../list_8h.html#a6543d16ccfb2a338a91e19500e4eefe5',1,'List_find(struct List *list, const char *value, int(*compare)(const char *, const char *)):&#160;list.c'],['../list_8c.html#a6543d16ccfb2a338a91e19500e4eefe5',1,'List_find(struct List *list, const char *value, int(*compare)(const char *, const char *)):&#160;list.c']]],
+  ['list_5finsert_8',['List_insert',['../list_8h.html#a3a3ed3e7051f97d1ec95b791c41f3dca',1,'List_insert(struct List *list, struct Node *pos, const char *value):&#160;list.c'],['../list_8c.html#a3a3ed3e7051f97d1ec95b791c41f3dca',1,'List_insert(struct List *list, struct Node *pos, const char *value):&#160;list.c']]],
+  ['list_5fnew_9',['List_new',['../list_8h.html#a1f8e3e2e72ca485c0330b1dccb07c7fd',1,'List_new():&#160;list.c'],['../list_8c.html#a1f8e3e2e72ca485c0330b1dccb07c7fd',1,'List_new():&#160;list.c']]],
+  ['list_5fpop_5fback_10',['List_pop_back',['../list_8h.html#a370a85f1f50904ae147929b93d4e4a4d',1,'List_pop_back(struct List *list):&#160;list.c'],['../list_8c.html#a370a85f1f50904ae147929b93d4e4a4d',1,'List_pop_back(struct List *list):&#160;list.c']]],
+  ['list_5fpop_5ffront_11',['List_pop_front',['../list_8h.html#a7e52247e1d1dc125ff0d803892392e7d',1,'List_pop_front(struct List *list):&#160;list.c'],['../list_8c.html#a7e52247e1d1dc125ff0d803892392e7d',1,'List_pop_front(struct List *list):&#160;list.c']]],
+  ['list_5fprint_12',['List_print',['../list_8h.html#a81a13d2dbd3f0ef42fa14b05a122ac3c',1,'List_print(const struct List *list):&#160;list.c'],['../list_8c.html#a81a13d2dbd3f0ef42fa14b05a122ac3c',1,'List_print(const struct List *list):&#160;list.c']]],
+  ['list_5fpush_5fback_13',['List_push_back',['../list_8h.html#a7c4748d2800b7b89479dd5a1b698a985',1,'List_push_back(struct List *list, const char *value):&#160;list.c'],['../list_8c.html#a7c4748d2800b7b89479dd5a1b698a985',1,'List_push_back(struct List *list, const char *value):&#160;list.c']]],
+  ['list_5fpush_5ffront_14',['List_push_front',['../list_8h.html#ad4f6d87407d2ec4fdf2a713563360a09',1,'List_push_front(struct List *list, const char *value):&#160;list.c'],['../list_8c.html#ad4f6d87407d2ec4fdf2a713563360a09',1,'List_push_front(struct List *list, const char *value):&#160;list.c']]],
+  ['list_5fsort_15',['List_sort',['../list_8h.html#a44215b1dba68bdf1ae949d3c11393e7d',1,'List_sort(struct List *list, int(*compare)(const char *, const char *)):&#160;list.c'],['../list_8c.html#a44215b1dba68bdf1ae949d3c11393e7d',1,'List_sort(struct List *list, int(*compare)(const char *, const char *)):&#160;list.c']]],
+  ['list_5fsplice_16',['List_splice',['../list_8h.html#ae6718ecefb27402aaf2e4c45c08c4764',1,'List_splice(struct List *list1, struct Node *pos1, struct List *list2, struct Node *from2, struct Node *to2):&#160;list.c'],['../list_8c.html#ae6718ecefb27402aaf2e4c45c08c4764',1,'List_splice(struct List *list1, struct Node *pos1, struct List *list2, struct Node *from2, struct Node *to2):&#160;list.c']]],
+  ['list_5fswap_17',['List_swap',['../list_8h.html#a62e990913799deda7cb08b8aeb7608a7',1,'List_swap(struct List *list, struct Node *x, struct Node *y):&#160;list.c'],['../list_8c.html#a62e990913799deda7cb08b8aeb7608a7',1,'List_swap(struct List *list, struct Node *x, struct Node *y):&#160;list.c']]]
+];

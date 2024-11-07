@@ -1,0 +1,164 @@
+\doxysection{modules/list.c File Reference}
+\hypertarget{list_8c}{}\label{list_8c}\index{modules/list.c@{modules/list.c}}
+{\ttfamily \#include "{}list.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8c_a610119c3e4720f5cd66814cd69835835}{duplicate\+String}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+size\+\_\+t \mbox{\hyperlink{list_8c_a8f17f5657bf553c530528f6bce3b38bb}{string\+Length}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+int \mbox{\hyperlink{list_8c_a0715f48afe0531602e2c7d397d977f60}{copy\+String}} (char \texorpdfstring{$\ast$}{*}dst, const char \texorpdfstring{$\ast$}{*}src, size\+\_\+t dst\+Size)
+\item 
+struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8c_a1f8e3e2e72ca485c0330b1dccb07c7fd}{List\+\_\+new}} ()
+\item 
+void \mbox{\hyperlink{list_8c_af5600aaf3ae8a1173bb37331726ef79a}{List\+\_\+clear}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list)
+\item 
+void \mbox{\hyperlink{list_8c_aa019fde4b64ecf1d964ac2c7bd913764}{List\+\_\+delete}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list)
+\item 
+void \mbox{\hyperlink{list_8c_a81a13d2dbd3f0ef42fa14b05a122ac3c}{List\+\_\+print}} (const struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list)
+\item 
+int \mbox{\hyperlink{list_8c_a3a3ed3e7051f97d1ec95b791c41f3dca}{List\+\_\+insert}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list, struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}pos, const char \texorpdfstring{$\ast$}{*}value)
+\item 
+int \mbox{\hyperlink{list_8c_ad4f6d87407d2ec4fdf2a713563360a09}{List\+\_\+push\+\_\+front}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list, const char \texorpdfstring{$\ast$}{*}value)
+\item 
+int \mbox{\hyperlink{list_8c_a7c4748d2800b7b89479dd5a1b698a985}{List\+\_\+push\+\_\+back}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list, const char \texorpdfstring{$\ast$}{*}value)
+\item 
+int \mbox{\hyperlink{list_8c_aa53bface0c554ef275ce830c098d9ebe}{Node\+\_\+update}} (struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}node, const char \texorpdfstring{$\ast$}{*}value)
+\item 
+void \mbox{\hyperlink{list_8c_ad9651dd579d4b99914f39a08eeb4dc30}{List\+\_\+erase}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list, struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}pos)
+\item 
+int \mbox{\hyperlink{list_8c_a7e52247e1d1dc125ff0d803892392e7d}{List\+\_\+pop\+\_\+front}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list)
+\item 
+int \mbox{\hyperlink{list_8c_a370a85f1f50904ae147929b93d4e4a4d}{List\+\_\+pop\+\_\+back}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list)
+\item 
+void \mbox{\hyperlink{list_8c_ae6718ecefb27402aaf2e4c45c08c4764}{List\+\_\+splice}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list1, struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}pos1, struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list2, struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}from2, struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}to2)
+\item 
+struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{list_8c_a6543d16ccfb2a338a91e19500e4eefe5}{List\+\_\+find}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list, const char \texorpdfstring{$\ast$}{*}value, int(\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{list_8h_a8d06bb2eaaf16bf7961819a7c9a3514b}{compare}})(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}))
+\item 
+void \mbox{\hyperlink{list_8c_a62e990913799deda7cb08b8aeb7608a7}{List\+\_\+swap}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list, struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}x, struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}y)
+\item 
+void \mbox{\hyperlink{list_8c_a44215b1dba68bdf1ae949d3c11393e7d}{List\+\_\+sort}} (struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}list, int(\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{list_8h_a8d06bb2eaaf16bf7961819a7c9a3514b}{compare}})(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}))
+\item 
+int \mbox{\hyperlink{list_8c_a8d06bb2eaaf16bf7961819a7c9a3514b}{compare}} (const char \texorpdfstring{$\ast$}{*}str1, const char \texorpdfstring{$\ast$}{*}str2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{list_8c_a8d06bb2eaaf16bf7961819a7c9a3514b}\index{list.c@{list.c}!compare@{compare}}
+\index{compare@{compare}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily \label{list_8c_a8d06bb2eaaf16bf7961819a7c9a3514b} 
+int compare (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str1}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{str2}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a0715f48afe0531602e2c7d397d977f60}\index{list.c@{list.c}!copyString@{copyString}}
+\index{copyString@{copyString}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{copyString()}{copyString()}}
+{\footnotesize\ttfamily \label{list_8c_a0715f48afe0531602e2c7d397d977f60} 
+int copy\+String (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dst}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{src}{, }\item[{size\+\_\+t}]{dst\+Size}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a610119c3e4720f5cd66814cd69835835}\index{list.c@{list.c}!duplicateString@{duplicateString}}
+\index{duplicateString@{duplicateString}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{duplicateString()}{duplicateString()}}
+{\footnotesize\ttfamily \label{list_8c_a610119c3e4720f5cd66814cd69835835} 
+char \texorpdfstring{$\ast$}{*} duplicate\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_af5600aaf3ae8a1173bb37331726ef79a}\index{list.c@{list.c}!List\_clear@{List\_clear}}
+\index{List\_clear@{List\_clear}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_clear()}{List\_clear()}}
+{\footnotesize\ttfamily \label{list_8c_af5600aaf3ae8a1173bb37331726ef79a} 
+void List\+\_\+clear (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_aa019fde4b64ecf1d964ac2c7bd913764}\index{list.c@{list.c}!List\_delete@{List\_delete}}
+\index{List\_delete@{List\_delete}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_delete()}{List\_delete()}}
+{\footnotesize\ttfamily \label{list_8c_aa019fde4b64ecf1d964ac2c7bd913764} 
+void List\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_ad9651dd579d4b99914f39a08eeb4dc30}\index{list.c@{list.c}!List\_erase@{List\_erase}}
+\index{List\_erase@{List\_erase}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_erase()}{List\_erase()}}
+{\footnotesize\ttfamily \label{list_8c_ad9651dd579d4b99914f39a08eeb4dc30} 
+void List\+\_\+erase (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{, }\item[{struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{pos}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a6543d16ccfb2a338a91e19500e4eefe5}\index{list.c@{list.c}!List\_find@{List\_find}}
+\index{List\_find@{List\_find}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_find()}{List\_find()}}
+{\footnotesize\ttfamily \label{list_8c_a6543d16ccfb2a338a91e19500e4eefe5} 
+struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} List\+\_\+find (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{value}{, }\item[{int(\texorpdfstring{$\ast$}{*}}]{compare~}{)(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a3a3ed3e7051f97d1ec95b791c41f3dca}\index{list.c@{list.c}!List\_insert@{List\_insert}}
+\index{List\_insert@{List\_insert}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_insert()}{List\_insert()}}
+{\footnotesize\ttfamily \label{list_8c_a3a3ed3e7051f97d1ec95b791c41f3dca} 
+int List\+\_\+insert (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{, }\item[{struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{pos}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a1f8e3e2e72ca485c0330b1dccb07c7fd}\index{list.c@{list.c}!List\_new@{List\_new}}
+\index{List\_new@{List\_new}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_new()}{List\_new()}}
+{\footnotesize\ttfamily \label{list_8c_a1f8e3e2e72ca485c0330b1dccb07c7fd} 
+struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*} List\+\_\+new (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a370a85f1f50904ae147929b93d4e4a4d}\index{list.c@{list.c}!List\_pop\_back@{List\_pop\_back}}
+\index{List\_pop\_back@{List\_pop\_back}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_pop\_back()}{List\_pop\_back()}}
+{\footnotesize\ttfamily \label{list_8c_a370a85f1f50904ae147929b93d4e4a4d} 
+int List\+\_\+pop\+\_\+back (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a7e52247e1d1dc125ff0d803892392e7d}\index{list.c@{list.c}!List\_pop\_front@{List\_pop\_front}}
+\index{List\_pop\_front@{List\_pop\_front}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_pop\_front()}{List\_pop\_front()}}
+{\footnotesize\ttfamily \label{list_8c_a7e52247e1d1dc125ff0d803892392e7d} 
+int List\+\_\+pop\+\_\+front (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a81a13d2dbd3f0ef42fa14b05a122ac3c}\index{list.c@{list.c}!List\_print@{List\_print}}
+\index{List\_print@{List\_print}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_print()}{List\_print()}}
+{\footnotesize\ttfamily \label{list_8c_a81a13d2dbd3f0ef42fa14b05a122ac3c} 
+void List\+\_\+print (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a7c4748d2800b7b89479dd5a1b698a985}\index{list.c@{list.c}!List\_push\_back@{List\_push\_back}}
+\index{List\_push\_back@{List\_push\_back}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_push\_back()}{List\_push\_back()}}
+{\footnotesize\ttfamily \label{list_8c_a7c4748d2800b7b89479dd5a1b698a985} 
+int List\+\_\+push\+\_\+back (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_ad4f6d87407d2ec4fdf2a713563360a09}\index{list.c@{list.c}!List\_push\_front@{List\_push\_front}}
+\index{List\_push\_front@{List\_push\_front}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_push\_front()}{List\_push\_front()}}
+{\footnotesize\ttfamily \label{list_8c_ad4f6d87407d2ec4fdf2a713563360a09} 
+int List\+\_\+push\+\_\+front (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a44215b1dba68bdf1ae949d3c11393e7d}\index{list.c@{list.c}!List\_sort@{List\_sort}}
+\index{List\_sort@{List\_sort}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_sort()}{List\_sort()}}
+{\footnotesize\ttfamily \label{list_8c_a44215b1dba68bdf1ae949d3c11393e7d} 
+void List\+\_\+sort (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{, }\item[{int(\texorpdfstring{$\ast$}{*}}]{compare~}{)(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_ae6718ecefb27402aaf2e4c45c08c4764}\index{list.c@{list.c}!List\_splice@{List\_splice}}
+\index{List\_splice@{List\_splice}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_splice()}{List\_splice()}}
+{\footnotesize\ttfamily \label{list_8c_ae6718ecefb27402aaf2e4c45c08c4764} 
+void List\+\_\+splice (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list1}{, }\item[{struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{pos1}{, }\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list2}{, }\item[{struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{from2}{, }\item[{struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{to2}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a62e990913799deda7cb08b8aeb7608a7}\index{list.c@{list.c}!List\_swap@{List\_swap}}
+\index{List\_swap@{List\_swap}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{List\_swap()}{List\_swap()}}
+{\footnotesize\ttfamily \label{list_8c_a62e990913799deda7cb08b8aeb7608a7} 
+void List\+\_\+swap (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_list}{List}} \texorpdfstring{$\ast$}{*}}]{list}{, }\item[{struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{x}{, }\item[{struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{y}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_aa53bface0c554ef275ce830c098d9ebe}\index{list.c@{list.c}!Node\_update@{Node\_update}}
+\index{Node\_update@{Node\_update}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{Node\_update()}{Node\_update()}}
+{\footnotesize\ttfamily \label{list_8c_aa53bface0c554ef275ce830c098d9ebe} 
+int Node\+\_\+update (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{list_8c_a8f17f5657bf553c530528f6bce3b38bb}\index{list.c@{list.c}!stringLength@{stringLength}}
+\index{stringLength@{stringLength}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{stringLength()}{stringLength()}}
+{\footnotesize\ttfamily \label{list_8c_a8f17f5657bf553c530528f6bce3b38bb} 
+size\+\_\+t string\+Length (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+

@@ -10,7 +10,7 @@ INCLUDE_DIR = include
 TEST_DIR = test
 
 # Fichiers sources principaux
-SRC = $(SRC_DIR)/main.c $(MODULES_DIR)/list.c
+SRC = $(SRC_DIR)/main.c $(MODULES_DIR)/list.c $(TEST_DIR)/list-test.c
 # Fichiers sources pour les tests
 TEST_SRC = $(TEST_DIR)/list-test.c $(MODULES_DIR)/list.c
 

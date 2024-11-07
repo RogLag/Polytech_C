@@ -6,5 +6,11 @@
 int test_create ();
 int test_insert ();
 int test_push_front ();
+int test_push_back ();
+int test_pop_front ();
+int test_pop_back ();
+int test_erase ();
+int test_splice ();
+int test_sort ();
 
 # endif

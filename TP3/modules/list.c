@@ -4,45 +4,14 @@
 # include <stdio.h>
 # include <string.h>
 
-char * duplicateString ( const char * str ) {
-    size_t length = stringLength(str);
-    char * dup = malloc(length);
-    copyString(dup, str, length);
-    return dup;
-}
-
-size_t stringLength ( const char * str ) {
-    size_t length = 0;
-    while ( str[length] != '\0' ) {
-        length++;
-    }
-    return length;
-}
-
-int copyString ( char * dst , const char * src , size_t dstSize ) {
-    int i = 0;
-    while ( src[i] != '\0' && i < dstSize - 1 ) {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    if ( src[i] != '\0' ) {
-        return -1;
-    } else {
-        return 0;
-    }
-}
-
 struct List * List_new (){
     struct List * list = malloc(sizeof(struct List));
     if (list == NULL) {
-        printf("La creation de la liste a echoue\n");
         return NULL;
     };
     list->size = 0;
     list->head = NULL;
     list->tail = NULL;
-    printf("La liste a ete cree avec succes\n");
     return list;
 }
 
@@ -57,7 +26,6 @@ void List_clear ( struct List * list ){
     list->size = 0;
     list->head = NULL;
     list->tail = NULL;
-    printf("La liste a ete videe\n");
 }
 
 void List_delete ( struct List * list ){
@@ -65,30 +33,32 @@ void List_delete ( struct List * list ){
         List_clear(list);
         free(list);
     }
-    printf("La liste a ete supprimee\n");
 }
 
 void List_print ( const struct List * list ){
     struct Node * node = list->head;
     int index = 0;
+    printf("[");
     while (node != NULL) {
         struct Node * next = node->next;
-        printf("Le node num %d contient la valeur : %s\n", index, node->value);
+        printf("%s", node->value);
+        if (next != NULL) {
+            printf(", ");
+        }
         node = next;
         index++;
     }
+    printf("]\n");
 }
 
 int List_insert ( struct List * list , struct Node * pos , const char * value ){
     struct Node * newNode = malloc(sizeof(struct Node));
     if(newNode == NULL){
-        printf("Impossible de creer le nouveau node\n");
         return 1;
     }
-    newNode->value = malloc(strlen(value) + 1); // Allouer de la mémoire pour la copie de la chaîne
+    newNode->value = malloc(strlen(value) + 1);
     if (newNode->value == NULL) {
         free(newNode);
-        printf("Impossible d'allouer de la mémoire pour la valeur du node\n");
         return 1;
     }
     strcpy(newNode->value, value);
@@ -96,7 +66,6 @@ int List_insert ( struct List * list , struct Node * pos , const char * value ){
     newNode->next = NULL;
     if(newNode->value == NULL){
         free(newNode);
-        printf("La valeur du node n'est pas valide\n");
         return 1;
     }
     if(pos == NULL){
@@ -110,7 +79,6 @@ int List_insert ( struct List * list , struct Node * pos , const char * value ){
             newNode->prev = lastNode;
             list->tail = newNode;
         }
-        printf("Le nouveau Node a ete ajoute a la fin de la liste car le Node pos est NULL\n");
     }
     else{
         newNode->prev = pos->prev;
@@ -121,7 +89,6 @@ int List_insert ( struct List * list , struct Node * pos , const char * value ){
             list->head = newNode;
         }
         pos->prev = newNode;
-        printf("Le nouveau Node a ete ajoute avant le Node pos\n");
     }
     list->size++;
     return 0;
@@ -130,13 +97,11 @@ int List_insert ( struct List * list , struct Node * pos , const char * value ){
 int List_push_front ( struct List * list , const char * value ){
     struct Node * newNode = malloc(sizeof(struct Node));
     if(newNode == NULL){
-        printf("Impossible de creer le nouveau node\n");
         return 1;
     }
-    newNode->value = malloc(strlen(value) + 1); // Allouer de la mémoire pour la copie de la chaîne
+    newNode->value = malloc(strlen(value) + 1);
     if (newNode->value == NULL) {
         free(newNode);
-        printf("Impossible d'allouer de la mémoire pour la valeur du node\n");
         return 1;
     }
     strcpy(newNode->value, value);
@@ -144,7 +109,6 @@ int List_push_front ( struct List * list , const char * value ){
     newNode->next = list->head;
     if(newNode->value == NULL){
         free(newNode);
-        printf("La valeur du node n'est pas valide\n");
         return 1;
     }
     if(list->head == NULL){
@@ -156,22 +120,24 @@ int List_push_front ( struct List * list , const char * value ){
         list->head = newNode;
     }
     list->size++;
-    printf("Le nouveau Node a ete ajoute au debut de la liste\n");
     return 0;
 }
 
 int List_push_back ( struct List * list , const char * value ){
     struct Node * newNode = malloc(sizeof(struct Node));
     if(newNode == NULL){
-        printf("Impossible de creer le nouveau node\n");
         return 1;
     }
-    newNode->value = duplicateString(value);
+    newNode->value = malloc(strlen(value) + 1);
+    if (newNode->value == NULL) {
+        free(newNode);
+        return 1;
+    }
+    strcpy(newNode->value, value);
     newNode->prev = list->tail;
     newNode->next = NULL;
     if(newNode->value == NULL){
         free(newNode);
-        printf("La valeur du node n'est pas valide\n");
         return 1;
     }
     if(list->tail == NULL){
@@ -183,26 +149,25 @@ int List_push_back ( struct List * list , const char * value ){
         list->tail = newNode;
     }
     list->size++;
-    printf("Le nouveau Node a ete ajoute a la fin de la liste\n");
     return 0;
 }
 
 int Node_update ( struct Node * node , const char * value ){
-    char * storeValue = node->value;
-    node->value = duplicateString(value);
-    if(node->value == NULL){
-        printf("La nouvelle valeur du Node est incorrecte\n");
-        node->value = storeValue;
-        return 0;
+    if(node == NULL){
+        return 1;
     }
-    free(storeValue);
-    printf("La valeur du Node a ete mise a jour\n");
+    free(node->value);
+    node->value = malloc(strlen(value) + 1);
+    if (node->value == NULL) {
+        return 1;
+    }
+    strcpy(node->value, value);
     return 0;
 }
 
 void List_erase ( struct List * list, struct Node * pos ){
     if (pos == NULL){
-        printf("Le Node a supprimer n'existe pas\n");
+        return;
     }
     if (pos->prev != NULL && pos->next != NULL){
         pos->prev->next = pos->next;
@@ -218,12 +183,10 @@ void List_erase ( struct List * list, struct Node * pos ){
     }
     free(pos);
     list->size--;
-    printf("Le Node a bien ete supprimer\n");
 }
 
 int List_pop_front ( struct List * list ){
     if(list->head == NULL){
-        printf("La liste est vide, impossible de supprimer le premier Node\n");
         return 1;
     }
     struct Node* myNode = list->head;
@@ -237,13 +200,11 @@ int List_pop_front ( struct List * list ){
     }
     free(myNode);
     list->size--;
-    printf("Le premier element a bien ete supprimer\n");
     return 0;
 }
 
 int List_pop_back ( struct List * list ){
     if(list->tail == NULL){
-        printf("La liste est vide, impossible de supprimer le dernier Node\n");
         return 1;
     }
     struct Node* myNode = list->tail;
@@ -257,37 +218,37 @@ int List_pop_back ( struct List * list ){
     }
     free(myNode);
     list->size--;
-    printf("Le dernier element a bien ete supprimer\n");
     return 0;
 }
 
 void List_splice ( struct List * list1 , struct Node * pos1 , struct List * list2 , struct Node * from2 , struct Node * to2 ){
     if (from2 == NULL){
-        printf("Le Node from2 n'existe pas\n");
         return;
     }
     if (to2 == NULL){
-        printf("Le Node to2 n'existe pas\n");
-        return;
+        to2 = list2->tail;
     }
     if (pos1 == NULL){
-        printf("Le Node pos1 n'existe pas\n");
-        return;
+        pos1 = list1->tail;
     }
     if (list1 == list2){
-        printf("Les deux listes sont identiques\n");
-        return;
-    }
-    if (pos1->prev != NULL){
-        pos1->prev->next = from2;
+        struct Node * node = from2;
+        while (node != to2) {
+            struct Node * next = node->next;
+            List_insert(list1, pos1, node->value);
+            List_erase(list2, node);
+            node = next;
+        }
     }
     else{
-        list1->head = from2;
+        struct Node * node = from2;
+        while (node != to2) {
+            struct Node * next = node->next;
+            List_insert(list1, pos1, node->value);
+            List_erase(list2, node);
+            node = next;
+        }
     }
-    from2->prev = pos1->prev;
-    to2->next = pos1;
-    pos1->prev = to2;
-    printf("Les Nodes ont bien ete deplaces\n");
 }
 
 struct Node * List_find ( struct List * list , const char * value , int (* compare )( const char * , const char *)){
@@ -303,11 +264,9 @@ struct Node * List_find ( struct List * list , const char * value , int (* compa
 
 void List_swap ( struct List * list , struct Node * x , struct Node * y ){
     if (x == NULL){
-        printf("Le Node x n'existe pas\n");
         return;
     }
     if (y == NULL){
-        printf("Le Node y n'existe pas\n");
         return;
     }
     if (x->prev != NULL){
@@ -340,7 +299,6 @@ void List_swap ( struct List * list , struct Node * x , struct Node * y ){
     temp = x->next;
     x->next = y->next;
     y->next = temp;
-    printf("Les Nodes ont bien ete echanges\n");
 }
 
 void List_sort ( struct List * list , int (* compare )( const char * , const char *)){
@@ -355,7 +313,6 @@ void List_sort ( struct List * list , int (* compare )( const char * , const cha
         }
         node = node->next;
     }
-    printf("La liste a bien ete triee\n");
 }
 
 
